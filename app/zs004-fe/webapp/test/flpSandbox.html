@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FLP Sandbox - ZS004</title>
+
+  <!-- 1) UShell config as external JS (CSP-safe) -->
+  flpSandboxConfig.js</script>
+
+  <!-- 2) FLP sandbox bootstrap -->
+  https://ui5.sap.com/test-resources/sap/ushell/bootstrap/sandbox.js"></script>
+
+  <!-- 3) UI5 bootstrap + oninit to external module (no inline) -->
+  https://ui5.sap.com/resources/sap-ui-core.js
+    data-sap-ui-async="true"
+    data-sap-ui-theme="sap_horizon"
+    data-sap-ui-libs="sap.ui.core,sap.m,sap.ushell,sap.ui.fl,sap.uxap,sap.fe.core,sap.fe.templates"
+    data-sap-ui-resourceroots='{"zs004.zs004fe":"../"}'
+    data-sap-ui-oninit="module:zs004/zs004fe/test/flpSandbox.init"></script>
+</head>
+<body class="sapUiBody" id="content"></body>
+</html>
