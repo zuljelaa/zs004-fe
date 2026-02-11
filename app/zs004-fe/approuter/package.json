@@ -1,0 +1,14 @@
+{
+  "name": "zs004-approuter",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": "20.x"
+  },
+  "dependencies": {
+    "@sap/approuter": "^15.0.0"
+  },
+  "scripts": {
+    "start": "node node_modules/@sap/approuter/src/approuter.js"
+  }
+}

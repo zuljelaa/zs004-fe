@@ -1,4 +1,4 @@
-name: UI5 Lint
+name: UI5 Build
 
 on:
   push:
@@ -8,7 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  ui5-lint:
+  build:
+    name: UI5 Build Job
     runs-on: ubuntu-latest
 
     steps:
@@ -23,5 +24,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run UI5 Linter
-        run: npx ui5lint --details
+      - name: Install UI5 CLI
+        run: npm install --global @ui5/cli
+
+      - name: Build UI5 App
+        run: ui5 build --all
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui5-dist
+          path: dist

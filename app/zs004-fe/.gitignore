@@ -1,0 +1,12 @@
+# Ignore root lockfile
+/package-lock.json
+
+# Ignore build folders
+dist/
+build/
+
+# Ignore node modules except approuter's
+node_modules/
+
+# Allow approuter's lockfile
+!approuter/package-lock.json
