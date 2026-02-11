@@ -10,3 +10,13 @@ node_modules/
 
 # Allow approuter's lockfile
 !approuter/package-lock.json
+node_modules/
+dist/
+.scp/
+.env
+Makefile*.mta
+mta_archives
+mta-*
+resources
+archive.zip
+.*_mta_build_tmp

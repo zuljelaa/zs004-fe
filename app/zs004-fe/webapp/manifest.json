@@ -1,149 +1,175 @@
 {
-  "_version": "2.0.0",
-
-  "sap.app": {
-    "id": "zs004.zs004fe",
-    "type": "application",
-    "i18n": {
-      "bundleUrl": "i18n/i18n.properties",
-      "supportedLocales": ["", "en"],
-      "fallbackLocale": "en"
-    },
-    "applicationVersion": { "version": "0.0.1" },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
-    "dataSources": {
-      "mainService": {
-        "uri": "/zs004/",
-        "type": "OData",
-        "settings": {
-          "odataVersion": "4.0",
-          "annotations": []
-        }
-      }
-    }
-  },
-
-  "sap.ui": {
-    "technology": "UI5",
-    "icons": {
-      "icon": "",
-      "favIcon": "",
-      "phone": "",
-      "phone@2": "",
-      "tablet": "",
-      "tablet@2": ""
-    },
-    "deviceTypes": { "desktop": true, "tablet": true, "phone": true }
-  },
-
-  "sap.ui5": {
-    "flexEnabled": true,
-
-    "dependencies": {
-      "minUI5Version": "1.136.0",
-      "libs": {
-        "sap.ui.core": {},
-        "sap.m": {},
-        "sap.ui.table": {},
-        "sap.fe.core": {},
-        "sap.fe.templates": {}
-      }
-    },
-
-    "contentDensities": { "compact": true, "cozy": true },
-
-    "models": {
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "settings": {
-          "bundleName": "zs004.zs004fe.i18n.i18n",
-          "supportedLocales": ["", "en"],
-          "fallbackLocale": "en"
-        }
-      },
-      "": {
-        "type": "sap.ui.model.odata.v4.ODataModel",
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true
-        }
-      }
-    },
-
-    "routing": {
-      "config": {
-        "routerClass": "sap.fe.core.Router",
-        "viewType": "XML",
-        "controlId": "app",
-        "controlAggregation": "pages",
-        "transition": "slide"
-      },
-      "routes": [
-        { "pattern": ":?query:", "name": "ZS004List", "target": "ZS004List" },
-        { "pattern": "ZS004({key}):?query:", "name": "ZS004ObjectPage", "target": "ZS004ObjectPage" }
-      ],
-      "targets": {
-        "ZS004List": {
-          "type": "Component",
-          "id": "ZS004List",
-          "name": "sap.fe.templates.ListReport",
-          "options": {
-            "settings": {
-              "entitySet": "ZS004",
-              "variantManagement": "Page",
-              "condensedTableLayout": true,
-              "navigation": {
-                "ZS004": { "detail": { "route": "ZS004ObjectPage" } }
-              },
-              "controlConfiguration": {
-                "@com.sap.vocabularies.UI.v1.LineItem": {
-                  "tableSettings": {
-                    "type": "GridTable",
-                    "creationMode": "Inline",
-                    "enableFullScreen": true
-                  }
-                }
-              }
-            }
-          }
+    "_version": "2.0.0",
+    "sap.app": {
+        "id": "zs004.zs004fe",
+        "type": "application",
+        "i18n": {
+            "bundleUrl": "i18n/i18n.properties",
+            "supportedLocales": [
+                "",
+                "en"
+            ],
+            "fallbackLocale": "en"
         },
-        "ZS004ObjectPage": {
-          "type": "Component",
-          "id": "ZS004ObjectPage",
-          "name": "sap.fe.templates.ObjectPage",
-          "options": {
-            "settings": {
-              "entitySet": "ZS004",
-              "editableHeaderContent": false
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "dataSources": {
+            "mainService": {
+                "uri": "/zs004/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0",
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml"
+                }
             }
-          }
+        },
+        "sourceTemplate": {
+            "id": "@sap/ux-app-migrator:freestyle",
+            "version": "1.20.2",
+            "toolsId": "8dd23f3d-4f06-436e-98af-140d802ba5bd"
         }
-      }
     },
-
-    "flexBundle": false
-  },
-
-  "sap.fiori": { "registrationIds": [], "archeType": "transactional" },
-
-  "sap.fe": {
-    "app": {
-      "enableLazyLoading": true,
-      "hideDraft": {
-        "enabled": true,
-        "stayOnCurrentPageAfterSave": true,
-        "stayOnCurrentPageAfterCancel": true,
-        "hideCreateNext": true
-      }
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
     },
-    "macros": {
-      "table": {
-        "defaultCreationMode": "InlineCreationRows"
-      }
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.136.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.ui.table": {},
+                "sap.fe.core": {},
+                "sap.fe.templates": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "zs004.zs004fe.i18n.i18n",
+                    "supportedLocales": [
+                        "",
+                        "en"
+                    ],
+                    "fallbackLocale": "en"
+                }
+            },
+            "": {
+                "type": "sap.ui.model.odata.v4.ODataModel",
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.fe.core.Router",
+                "viewType": "XML",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "transition": "slide"
+            },
+            "routes": [
+                {
+                    "pattern": ":?query:",
+                    "name": "ZS004List",
+                    "target": "ZS004List"
+                },
+                {
+                    "pattern": "ZS004({key}):?query:",
+                    "name": "ZS004ObjectPage",
+                    "target": "ZS004ObjectPage"
+                }
+            ],
+            "targets": {
+                "ZS004List": {
+                    "type": "Component",
+                    "id": "ZS004List",
+                    "name": "sap.fe.templates.ListReport",
+                    "options": {
+                        "settings": {
+                            "entitySet": "ZS004",
+                            "variantManagement": "Page",
+                            "condensedTableLayout": true,
+                            "navigation": {
+                                "ZS004": {
+                                    "detail": {
+                                        "route": "ZS004ObjectPage"
+                                    }
+                                }
+                            },
+                            "controlConfiguration": {
+                                "@com.sap.vocabularies.UI.v1.LineItem": {
+                                    "tableSettings": {
+                                        "type": "GridTable",
+                                        "creationMode": "Inline",
+                                        "enableFullScreen": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "ZS004ObjectPage": {
+                    "type": "Component",
+                    "id": "ZS004ObjectPage",
+                    "name": "sap.fe.templates.ObjectPage",
+                    "options": {
+                        "settings": {
+                            "entitySet": "ZS004",
+                            "editableHeaderContent": false
+                        }
+                    }
+                }
+            }
+        },
+        "flexBundle": false
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "transactional"
+    },
+    "sap.fe": {
+        "app": {
+            "enableLazyLoading": true,
+            "hideDraft": {
+                "enabled": true,
+                "stayOnCurrentPageAfterSave": true,
+                "stayOnCurrentPageAfterCancel": true,
+                "hideCreateNext": true
+            }
+        },
+        "macros": {
+            "table": {
+                "defaultCreationMode": "InlineCreationRows"
+            }
+        }
     }
-  }
 }

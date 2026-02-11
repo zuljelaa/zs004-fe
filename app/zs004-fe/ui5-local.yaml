@@ -1,0 +1,44 @@
+specVersion: "4.0"
+metadata:
+  name: zs004.zs004fe
+type: application
+framework:
+  name: SAPUI5
+  version: 1.136.0
+  libraries:
+    - name: sap.ui.core
+    - name: sap.m
+    - name: sap.ui.table
+    - name: sap.fe.core
+    - name: sap.fe.templates
+    - name: sap.ushell
+    - name: sap.ui.fl
+    - name: sap.uxap
+    - name: themelib_sap_bluecrystal
+    - name: themelib_sap_horizon
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertErrors: false
+    - name: sap-fe-mockserver
+      beforeMiddleware: fiori-tools-proxy
+      configuration:
+        service:
+          urlBasePath: /zs004
+          name: ""
+          metadataXmlPath: ./webapp/localservice/metadata.xml
+          mockdataRootPath: ./webapp/localService/mockdata
+          generateMockData: true
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-preview
+      afterMiddleware: fiori-tools-appreload
+      configuration:
+        component: zs004.zs004fe
+        ui5Theme: sap_horizon

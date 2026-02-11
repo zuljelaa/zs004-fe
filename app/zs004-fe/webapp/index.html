@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <title>ZS004 FE — Index</title>
-
-  <!-- UI5 bootstrap: CSP-safe, tiada inline JS -->
-  https://ui5.sap.com/resources/sap-ui-core.js
-    data-sap-ui-async="true"
-    data-sap-ui-theme="sap_horizon"
-    data-sap-ui-libs="sap.ui.core,sap.m,sap.ui.table,sap.fe.core,sap.fe.templates"
-    data-sap-ui-resourceroots='{"zs004.zs004fe":"./"}'
-    data-sap-ui-oninit="module:zs004/zs004fe/index.init"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		html, body, body > div, #container, #container-uiarea {
+			height: 100%;
+		}
+	</style>
+	<script
+			id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_horizon"
+			data-sap-ui-resourceroots='{
+            "zs004.zs004fe": "."
+        }'
+			data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-async="true"
+			data-sap-ui-preload="async">
+	</script>
 </head>
-<body class="sapUiBody" id="content" style="height:100vh">
-  <div data-sap-ui-component
-       data-name="zs004.zs004fe"
-       data-id="container"
-       data-settings='{"id":"zs004fe"}'
-       data-height="100%"></div>
+<body class="sapUiBody sapUiSizeCompact" id="content">
+<div data-sap-ui-component data-name="zs004.zs004fe" data-id="container" data-settings='{"id" : "zs004.zs004fe"}' data-handle-validation="true"></div>
 </body>
 </html>

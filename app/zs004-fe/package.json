@@ -1,15 +1,41 @@
 {
   "scripts": {
-    "start": "ui5 serve --open index.html",
     "start:flp": "ui5 serve --open test/flpSandbox.html",
     "lint": "ui5lint --details",
     "lint:fix": "ui5lint --fix",
     "test": "ui5-test-runner --url http://localhost:8080/test/testsuite.qunit.html --port 8081",
-    "serve-and-test": "start-server-and-test 'ui5 serve' http://localhost:8080 'npm run test'"
+    "serve-and-test": "start-server-and-test 'ui5 serve' http://localhost:8080 'npm run test'",
+    "start_old": "ui5 serve --open index.html",
+    "start": "fiori run --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#fe-lrop\"",
+    "start-local": "fiori run --config ./ui5-local.yaml --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#fe-lrop\"",
+    "start-noflp": "fiori run --open \"index.html?sap-ui-xx-viewCache=false\"",
+    "start-variants-management": "fiori run --open \"preview.html?sap-ui-xx-viewCache=false&fiori-tools-rta-mode=true&sap-ui-rta-skip-flex-validation=true#preview-app\"",
+    "build": "ui5 build -a --clean-dest --include-task=generateCachebusterInfo",
+    "deploy": "fiori verify",
+    "deploy-config": "fiori add deploy-config",
+    "start-mock": "fiori run --config ./ui5-mock.yaml --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#fe-lrop\"",
+    "suite-tests": "fiori run --open \"test/testsuite.qunit.html\"",
+    "int-tests": "fiori run --open \"test/integration/opaTests.qunit.html\""
   },
   "devDependencies": {
     "@ui5/linter": "^1.20.10",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7"
-  }
+    "lint-staged": "^16.2.7",
+    "@ui5/cli": "^4.0.0",
+    "@sap/ux-ui5-tooling": "1",
+    "rimraf": "6.0.1",
+    "@sap-ux/ui5-middleware-fe-mockserver": "2"
+  },
+  "name": "zs004.zs004fe",
+  "version": "0.0.1",
+  "private": true,
+  "sapux": true,
+  "sapuxLayer": "CUSTOMER_BASE",
+  "description": "",
+  "keywords": [
+    "ui5",
+    "openui5",
+    "sapui5"
+  ],
+  "main": "webapp/index.html"
 }
