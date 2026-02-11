@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "ui5 serve --open index.html",
+    "start:flp": "ui5 serve --open test/flpSandbox.html",
+    "lint": "ui5lint --details",
+    "lint:fix": "ui5lint --fix",
+    "test": "ui5-test-runner --url http://localhost:8080/test/testsuite.qunit.html --port 8081",
+    "serve-and-test": "start-server-and-test 'ui5 serve' http://localhost:8080 'npm run test'"
+  },
+  "devDependencies": {
+    "@ui5/linter": "^1.20.10",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7"
+  }
+}

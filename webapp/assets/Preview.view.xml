@@ -1,0 +1,7 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  <Page title="Preview">
+    <content>
+      <Text text="Preview placeholder (assets/Preview.view.xml)"/>
+    </content>
+  </Page>
+</mvc:View>
